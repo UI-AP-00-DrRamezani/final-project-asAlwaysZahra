@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="bg" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="643.0" prefWidth="1288.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo3.GUI.GameController">
+    <children>
+        <ImageView fitHeight="646.0" fitWidth="1500.0" layoutX="-111.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@img/Background1.png" />
+            </image>
+        </ImageView>
+        <HBox fx:id="studentHeroes" alignment="CENTER" layoutX="193.0" layoutY="-2.0" prefHeight="95.0" prefWidth="529.0" spacing="30.0" style="-fx-background-color: #6B2E00CC; -fx-background-radius: 10px;">
+         <children>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="90.0" style="-fx-background-color: #8F6544CB; -fx-background-radius: 5px;" />
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="90.0" style="-fx-background-color: #8F6544CB; -fx-background-radius: 5px;" />
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="90.0" style="-fx-background-color: #8F6544CB; -fx-background-radius: 5px;" />
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="90.0" style="-fx-background-color: #8F6544CB; -fx-background-radius: 5px;" />
+         </children></HBox>
+      <Pane fx:id="line1" layoutX="156.0" layoutY="98.0" prefHeight="88.0" prefWidth="788.0" style="-fx-background-color: A43B3B96; -fx-background-radius: 7px;" visible="false" />
+      <Pane fx:id="line4" layoutX="153.0" layoutY="416.0" prefHeight="88.0" prefWidth="803.0" style="-fx-background-color: A43B3B96; -fx-background-radius: 7px;" visible="false" />
+      <Pane fx:id="line3" layoutX="153.0" layoutY="302.0" prefHeight="102.0" prefWidth="803.0" style="-fx-background-color: A43B3B96; -fx-background-radius: 7px;" visible="false" />
+      <Pane fx:id="line2" layoutX="156.0" layoutY="196.0" prefHeight="95.0" prefWidth="797.0" style="-fx-background-color: A43B3B96; -fx-background-radius: 7px;" visible="false" />
+      <Pane fx:id="line5" layoutX="145.0" layoutY="512.0" prefHeight="102.0" prefWidth="811.0" style="-fx-background-color: A43B3B96; -fx-background-radius: 7px;" visible="false" />
+      <ProgressBar fx:id="officeProgressBar" layoutX="38.0" layoutY="424.0" prefHeight="17.0" prefWidth="139.0" progress="0.0" rotate="97.0" styleClass="progressbar" stylesheets="@styles.css" />
+      <AnchorPane layoutX="747.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="62.0" prefWidth="80.0" style="-fx-background-color: #E1B443BB; -fx-background-radius: 5px;">
+         <children>
+            <Label alignment="CENTER" layoutX="7.0" layoutY="2.0" prefHeight="24.0" prefWidth="67.0" text="Score:">
+               <font>
+                  <Font name="Roboto Condensed" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_score" alignment="CENTER" layoutX="6.0" layoutY="24.0" prefHeight="37.0" prefWidth="67.0" text="0">
+               <font>
+                  <Font name="Roboto Condensed" size="28.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+    </children>
+</AnchorPane>
