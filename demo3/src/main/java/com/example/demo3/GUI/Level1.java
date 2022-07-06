@@ -31,7 +31,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicReference;
 
-public class GameGround extends Application {
+public class Level1 extends Application {
 
     int startPoint = 1300; // x axis
     int line1 = 100 - 10; // y axis
@@ -53,7 +53,7 @@ public class GameGround extends Application {
     ArrayList<Timeline> timelines = new ArrayList<>();
     ArrayList<ProgressIndicator> progressIndicators = new ArrayList<>();
 
-    public GameGround(boolean newGame) {
+    public Level1(boolean newGame) {
         Level1.newGame = newGame;
     }
 

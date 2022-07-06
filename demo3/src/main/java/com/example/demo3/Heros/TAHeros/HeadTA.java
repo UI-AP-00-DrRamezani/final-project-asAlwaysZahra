@@ -53,7 +53,6 @@ public class HeadTA extends Hero {
             ProfessorOffice.health--;
             if (ProfessorOffice.health <= 0) {
                 System.out.println("END -> lose"); // todo
-                GameGround.continueGame = false;
             }
         }
 
