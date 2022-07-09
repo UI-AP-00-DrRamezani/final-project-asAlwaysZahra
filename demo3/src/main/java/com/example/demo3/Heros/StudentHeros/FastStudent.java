@@ -20,6 +20,7 @@ public class FastStudent extends Hero {
         setPower(3);
         setSpeed(5);
         setHealth(100);
+        setProgress(0.04f);
 
         setImage(new Image(img_walk1));
         setFitWidth(75);

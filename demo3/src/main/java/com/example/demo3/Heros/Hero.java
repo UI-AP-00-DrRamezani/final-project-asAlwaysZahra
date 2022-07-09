@@ -14,6 +14,7 @@ public abstract class Hero extends ImageView {
     private int speed;
     private int health;
     public boolean isAttacking = false;
+    private float progress;
 
     public Hero() {
     }
@@ -77,5 +78,13 @@ public abstract class Hero extends ImageView {
 
     public void setHealth(int health) {
         this.health = health;
+    }
+
+    public float getProgress() {
+        return progress;
+    }
+
+    public void setProgress(float progress) {
+        this.progress = progress;
     }
 }

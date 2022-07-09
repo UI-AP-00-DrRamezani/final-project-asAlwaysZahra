@@ -19,6 +19,7 @@ public class NormalStudent extends Hero {
         setPower(3);
         setSpeed(2);
         setHealth(100);
+        setProgress(0.05f);
 
         setImage(new Image(img_walk1));
         setFitWidth(75);

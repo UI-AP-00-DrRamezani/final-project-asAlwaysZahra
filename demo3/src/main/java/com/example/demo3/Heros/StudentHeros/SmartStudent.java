@@ -19,6 +19,7 @@ public class SmartStudent extends Hero {
         setPower(5);
         setSpeed(2);
         setHealth(100);
+        setProgress(0.03f);
 
         setImage(new Image(img_walk1));
         setFitWidth(75);

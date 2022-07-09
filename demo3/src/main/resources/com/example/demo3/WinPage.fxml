@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane prefHeight="311.0" prefWidth="453.0" styleClass="bg" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo3.GUI.WinPage">
+    <children>
+        <Pane layoutX="14.0" layoutY="12.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="286.0" prefWidth="424.0" style="-fx-border-radius: 20px; -fx-border-color: E1B443FF;">
+            <children>
+            <VBox layoutX="39.0" layoutY="115.0" spacing="20.0">
+               <children>
+                  <HBox spacing="20.0">
+                     <children>
+                            <Label prefHeight="39.0" prefWidth="171.0" text="Enter your name:" textFill="WHITE">
+                                <font>
+                                    <Font name="Roboto Condensed" size="22.0" />
+                                </font>
+                            </Label>
+                            <TextField fx:id="name" prefHeight="39.0" prefWidth="157.0">
+                                <font>
+                                    <Font name="Lato-Light" size="20.0" />
+                                </font>
+                            </TextField>
+                     </children>
+                  </HBox>
+                  <HBox spacing="20.0">
+                     <children>
+                            <Label prefHeight="39.0" prefWidth="171.0" text="Enter your playerID:" textFill="WHITE">
+                                <font>
+                                    <Font name="Roboto Condensed" size="22.0" />
+                                </font>
+                            </Label>
+                            <TextField fx:id="id" prefHeight="39.0" prefWidth="157.0">
+                                <font>
+                                    <Font name="Lato-Light" size="20.0" />
+                                </font>
+                            </TextField>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+                <Button layoutX="321.0" layoutY="232.0" mnemonicParsing="false" onAction="#OKClicked" prefHeight="25.0" prefWidth="67.0" styleClass="btn" text="OK" textFill="WHITE">
+                    <font>
+                        <Font name="Roboto Condensed" size="18.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Label fx:id="lbl_result" layoutX="110.0" layoutY="14.0" prefHeight="44.0" prefWidth="204.0" text="YOU WON! 🎉" textFill="#e1b443">
+                    <font>
+                        <Font name="Roboto Condensed" size="36.0" />
+                    </font>
+                </Label>
+            <HBox layoutX="146.0" layoutY="60.0">
+               <children>
+                      <Label prefHeight="39.0" prefWidth="60.0" text="Score: " textFill="#c5c2c2">
+                          <font>
+                              <Font name="Roboto Condensed" size="22.0" />
+                          </font>
+                      </Label>
+                      <Label fx:id="lbl_score" alignment="CENTER" prefHeight="39.0" prefWidth="60.0" text="0" textFill="#c5c2c2">
+                          <font>
+                              <Font name="Roboto Condensed" size="22.0" />
+                          </font>
+                      </Label>
+               </children>
+            </HBox>
+            </children>
+        </Pane>
+    </children>
+</Pane>

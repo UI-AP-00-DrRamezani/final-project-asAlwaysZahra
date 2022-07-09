@@ -51,9 +51,6 @@ public class NormalTA extends Hero {
                 this.setImage(new Image(img_attack3));
 
             ProfessorOffice.health--;
-            if (ProfessorOffice.health <= 0) {
-                System.out.println("END -> lose"); // todo
-            }
         }
 
     }

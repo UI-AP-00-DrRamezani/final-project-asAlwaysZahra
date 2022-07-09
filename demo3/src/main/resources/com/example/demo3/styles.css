@@ -1,3 +1,21 @@
 .progressbar {
-    -fx-accent : rgb(255, 182, 0);
+    -fx-accent: rgb(255, 182, 0);
+}
+
+.bg {
+    -fx-background-color: linear-gradient(to top right, #ff70af, #5f48f5);
+}
+
+.btn {
+    -fx-background-color: rgba(255, 255, 255, 0.3);
+    -fx-background-radius: 16px;
+}
+
+.board .list-view .list-cell {
+    -fx-background-color: linear-gradient(to top right, rgba(255, 112, 175, 0.4), rgba(95, 72, 245, 0.5));
+}
+
+.lbl:hover {
+    -fx-border-color: #fff;
+    -fx-background-color: rgba(255, 255, 255, 0.2);
 }

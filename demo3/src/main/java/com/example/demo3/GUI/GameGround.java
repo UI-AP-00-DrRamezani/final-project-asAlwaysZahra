@@ -48,13 +48,13 @@ public class GameGround extends Application {
     //    public static boolean continueGame = true;
     public static boolean newGame = true;
     int score = 0;
-    int numberOfTAs = 5;
-
+    int numberOfTAs = 14;
     ArrayList<Timeline> timelines = new ArrayList<>();
     ArrayList<ProgressIndicator> progressIndicators = new ArrayList<>();
+    Timeline timeline;
 
     public GameGround(boolean newGame) {
-        Level1.newGame = newGame;
+        GameGround.newGame = newGame;
     }
 
     @Override
@@ -71,7 +71,7 @@ public class GameGround extends Application {
         stage.setMaximized(true);
         stage.show();
         stage.getScene().getWindow().setOnCloseRequest(windowEvent -> {
-            // add heroes
+            // insert heroes
             DataBase.deleteData();
             for (Hero h : allTAs)
                 DataBase.saveGame(h);
@@ -89,26 +89,13 @@ public class GameGround extends Application {
             oldGame();
 
 
-        if (numberOfTAs > 0) {
-            Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.3), e -> {
-                updateGame();
-            }));
-            timeline.setCycleCount(Animation.INDEFINITE);
-            timeline.play();
+        timeline = new Timeline(new KeyFrame(Duration.seconds(0.1), e -> {
 
-        } else {
-            System.out.println("!11");
-            try {
-                new Win().start(new Stage());
-            } catch (IOException ex) {
-                throw new RuntimeException(ex);
-            }
-//                new Alert(Alert.AlertType.INFORMATION, "YOU WON!").show();
-//                endGameTAs();
-        }
-        if (ProfessorOffice.health <= 0)
-            new Alert(Alert.AlertType.INFORMATION, "YOU LOST!").show();
+            updateGame();
 
+        }));
+        timeline.setCycleCount(Animation.INDEFINITE);
+        timeline.play();
     }
 
     public void newGame() {
@@ -243,6 +230,37 @@ public class GameGround extends Application {
         all.addAll(allStudents);
         all.addAll(allTAs);
 
+        if (numberOfTAs <= 0) {
+
+            try {
+                sleep(3000);
+                controller.lbl_score.getScene().getWindow().hide();
+                WinPage p = new WinPage();
+                p.start(new Stage());
+                timeline.stop();
+
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+
+            return;
+
+        } else if (ProfessorOffice.health <= 0) {
+
+            try {
+                sleep(3000);
+                controller.lbl_score.getScene().getWindow().hide();
+                new LosePage().start(new Stage());
+                timeline.stop();
+
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+
+            return;
+        }
+
+
         for (Hero h1 : all) {
 
             // detect collision and attack
@@ -256,7 +274,7 @@ public class GameGround extends Application {
 
                         new Thread(() -> {
 
-                            float totalHealth = 100;
+                            float totalHealth = 150;
                             ProgressBar heroHealth = createProgressBar(h1);
 
                             while (h1.isAlive() && enemy.isAlive()) {
@@ -309,26 +327,14 @@ public class GameGround extends Application {
 
                         Platform.runLater(() -> controller.officeProgressBar.setProgress(ProfessorOffice.health / totalHealth));
 
-                        Platform.runLater(() -> {
-                            if (h1 instanceof HeadTA)
-                                ((HeadTA) h1).attackOffice();
-                            if (h1 instanceof TiredTA)
-                                ((TiredTA) h1).attackOffice();
-                            if (h1 instanceof RobotTA)
-                                ((RobotTA) h1).attackOffice();
+                        if (h1 instanceof HeadTA)
+                            ((HeadTA) h1).attackOffice();
+                        if (h1 instanceof TiredTA)
+                            ((TiredTA) h1).attackOffice();
+                        if (h1 instanceof RobotTA)
+                            ((RobotTA) h1).attackOffice();
 
-                            sleep(500);
-
-                        });
-
-                        if (ProfessorOffice.health <= 0) {
-                            try {
-                                new Win().start(new Stage());
-                            } catch (IOException e) {
-                                throw new RuntimeException(e);
-                            }
-                            break;
-                        }
+                        sleep(500);
 
                     }
 
@@ -358,9 +364,9 @@ public class GameGround extends Application {
         ProgressIndicator pi4 = createProgressIndicator(s4);
 
         pi1.setProgress(0.5);
-        pi2.setProgress(0.5);
-        pi3.setProgress(0.5);
-        pi4.setProgress(0.5);
+        pi2.setProgress(0.4);
+        pi3.setProgress(0.6);
+        pi4.setProgress(0.3);
 
         progressIndicators.add(pi1);
         progressIndicators.add(pi2);
@@ -474,7 +480,7 @@ public class GameGround extends Application {
             t = new Timeline(new KeyFrame(Duration.seconds(1), e -> {
 
                 if (progressIndicators.get(finalI).getProgress() < 1)
-                    progressIndicators.get(finalI).setProgress(progressIndicators.get(finalI).getProgress() + 0.03f);
+                    progressIndicators.get(finalI).setProgress(progressIndicators.get(finalI).getProgress() + 0.05f);
 
                 if (progressIndicators.get(finalI).getProgress() < 1)
                     studentHeroesGroup.getChildren().get(finalI).setDisable(true);

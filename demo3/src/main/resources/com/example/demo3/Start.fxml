@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" styleClass="bg" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo3.GUI.StartController">
+    <children>
+      <ImageView fitHeight="149.0" fitWidth="167.0" layoutX="220.0" layoutY="-52.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/Asset%202.png" />
+         </image>
+         <effect>
+            <GaussianBlur radius="12.0" />
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="149.0" fitWidth="167.0" layoutX="9.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/Asset%203.png" />
+         </image>
+         <effect>
+            <GaussianBlur />
+         </effect>
+      </ImageView>
+      <Pane layoutX="36.0" layoutY="43.0" prefHeight="416.0" prefWidth="626.0" styleClass="btn">
+         <children>
+            <VBox alignment="CENTER" layoutX="357.0" layoutY="25.0" spacing="10.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="38.0" prefWidth="161.0" text="Score Board">
+                     <font>
+                        <Font name="Roboto Condensed" size="30.0" />
+                     </font>
+                  </Label>
+                  <ScrollPane hbarPolicy="NEVER" prefHeight="320.0" prefWidth="200.0" styleClass="board">
+                     <content>
+                        <ListView fx:id="scoreBoard" focusTraversable="false" prefHeight="320.0" prefWidth="200.0" styleClass="board" stylesheets="@styles.css" />
+                     </content>
+                  </ScrollPane>
+               </children>
+            </VBox>
+            <VBox layoutX="84.0" layoutY="122.0" spacing="20.0">
+               <children>
+                  <Label onMouseClicked="#newGame" prefHeight="38.0" prefWidth="200.0" styleClass="lbl" text="New Game">
+                     <font>
+                        <Font name="Roboto Condensed" size="30.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </Label>
+                  <Label onMouseClicked="#oldGame" prefHeight="38.0" prefWidth="200.0" styleClass="lbl" text="Continue Game">
+                     <font>
+                        <Font name="Roboto Condensed" size="30.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </Label>
+                  <Label onMouseClicked="#exit" prefHeight="38.0" prefWidth="200.0" styleClass="lbl" text="Exit">
+                     <font>
+                        <Font name="Roboto Condensed" size="30.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+      <ImageView fitHeight="140.0" fitWidth="144.0" layoutX="540.0" layoutY="351.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/Asset%202.png" />
+         </image>
+         <effect>
+            <GaussianBlur radius="2.0" />
+         </effect>
+      </ImageView>
+    </children>
+</AnchorPane>
